@@ -2,9 +2,9 @@
 @section('content')
 <div class="container">
 
-<form action="{{ url('/actividades'.$actividades->id ) }}" method="post">
+<form action="{{ url('/actividades/'.$actividades->id ) }}" method="post">
     @csrf
-    {{ method_field('PATCH')}}
+    {{ method_field('PATCH') }}
 
     @include('actividades.form',['modo'=>'Editar'])
 
