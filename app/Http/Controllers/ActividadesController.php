@@ -84,6 +84,7 @@ class ActividadesController extends Controller
     {
         //
         $actividades=Actividades::findOrFail($id);
+
         return view('actividades.edit', compact('actividades'));
     }
 
@@ -94,7 +95,7 @@ class ActividadesController extends Controller
      * @param  \App\Models\Actividades  $actividades
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Actividades $id)
+    public function update(Request $request, $id)
     {
 
         //
