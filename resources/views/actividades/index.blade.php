@@ -18,8 +18,9 @@
 <a href="{{ url('actividades/create') }}" class="btn btn-success">Registar Nueva Actividad</a>
 <br/>
     <br/>
-<table class="table table-light">
+<table class="table table-striped table-hover table-bordered caption-top">
 
+    <caption>List of activities</caption>
     <thead class="thead-light">
     <tr>
         <th>#</th>
@@ -58,6 +59,8 @@
     </tbody>
 
 </table>
-
+    <div class="d-flex justify-content-center">
+        {!! $actividad->links() !!}
+    </div>
 </div>
 @endsection

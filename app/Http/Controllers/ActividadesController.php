@@ -45,8 +45,8 @@ class ActividadesController extends Controller
             'Tarea' => 'required|string|max:100',
             'Description' => 'required|string|max:100',
             'Status' => 'required|string|max:100',
-            /*'start_date' => 'required|datetime',
-            'end_date' => 'required|datetime',*/
+            'start_date' => 'required|date|after:now',
+            'end_date' => 'required|date|after:start_date',
         ];
 
         $mensaje=[
@@ -97,19 +97,6 @@ class ActividadesController extends Controller
     public function update(Request $request, Actividades $id)
     {
 
-        /*$campos = [
-            'Tarea' => 'required|string|max:100',
-            'Description' => 'required|string|max:100',
-            'Status' => 'required|string|max:100',
-            /*'start_date' => 'required|datetime',
-            'end_date' => 'required|datetime',
-        ];
-
-        $mensaje=[
-            'required'=>'El :atribute es requerido',
-        ];
-
-        $this->validate($request, $campos, $mensaje);*/
         //
         $datosActividad = request()->except(['_token', '_method']);
         Actividades::where('id','=',$id)->update($datosActividad);
